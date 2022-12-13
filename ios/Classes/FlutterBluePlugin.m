@@ -65,7 +65,7 @@ typedef NS_ENUM(NSUInteger, LogLevel) {
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   //JET init here 
   if (self.centralManager == nil) {
-    self.centralManager = [[CBCentralManager alloc] initWithDelegate:instance queue:nil];
+    self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
   }
   
   if ([@"setLogLevel" isEqualToString:call.method]) {
